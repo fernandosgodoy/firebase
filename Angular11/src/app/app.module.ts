@@ -13,6 +13,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserInfoComponent } from './pages/user-info/user-info.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { UserInfoComponent } from './pages/user-info/user-info.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
