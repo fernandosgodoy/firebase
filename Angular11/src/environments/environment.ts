@@ -5,13 +5,6 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDCHJCEZAD1iWzqb7R4IdFmvYTcFHCZBmA",
-    authDomain: "kinvo-demo.firebaseapp.com",
-    projectId: "kinvo-demo",
-    storageBucket: "kinvo-demo.appspot.com",
-    messagingSenderId: "288688236911",
-    appId: "1:288688236911:web:3c257a99d6cc801e1f609a"
-
   }
 };
 
