@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { userInfo } from 'os';
+// import { userInfo } from 'os';
 
 @Component({
   selector: 'app-register',
@@ -33,13 +33,12 @@ export class RegisterComponent implements OnInit {
       this.authService.registerWithEmail(this.email, this.password).then((user) => {
         this.authService.authState = user;
         this.errorMessage = "Registrado com sucesso";
-        this.router.navigate(['userInfo']);
+        // this.router.navigate(['userInfo']);
       }).catch(e => {
         console.log(e);
         throw e;
-      })
+      });
     }
-    // console.log('método para registro ok');
   }
 
   validateForm(email:string, pass: string){

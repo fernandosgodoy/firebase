@@ -1,1 +1,21 @@
-<p>user-info works!</p>
+<div class="container"> 
+    <div class="row justify-content-center">
+        <div class="text-info" *ngIf="userId != ''">
+            <h5 class="alldata">
+                Informações do Usuário
+            </h5>
+            <h4>
+                <b>
+                    User ID:
+                </b>
+                {{userId}}
+            </h4>
+            <h4>
+                <b>
+                    User E-mail:
+                </b>
+                {{userName}}
+            </h4>
+        </div>
+    </div>
+</div>
