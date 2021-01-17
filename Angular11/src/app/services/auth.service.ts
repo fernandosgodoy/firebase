@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  authState: any = null;
+  authState: any = [];
 
   constructor(private angularFireAuth: AngularFireAuth,
     private router: Router) {
@@ -25,7 +25,14 @@ export class AuthService {
   }
 
   get currentUserName(): string {
-    return this.authState['email'];
+    let currentUser = '';
+    if ((this.authState != undefined) && (this.authState != null)){
+      currentUser = this.authState['email'];
+    }
+    else
+      currentUser = '';
+
+    return currentUser;
   }
 
   get isUserEmailLoggedIn(): boolean {
@@ -35,8 +42,8 @@ export class AuthService {
       return false;
   }
 
-  registerWithEmail(email: string, password: string) {
-    return this.angularFireAuth.createUserWithEmailAndPassword(email, password);
+  async registerWithEmail(email: string, password: string) {
+    return await this.angularFireAuth.createUserWithEmailAndPassword(email, password);
   }
 
   loginWithEmail(email: string, password: string){

@@ -28,15 +28,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.clearErrorMessage();
     if (this.validateForm(this.email, this.password))
-    {
-      this.authService.loginWithEmail(this.email, this.password).then((user) => {
-        this.authService.authState = user;
+      this.authService.loginWithEmail(this.email, this.password).then(data =>{
+        this.authService.authState = data.user;
         this.router.navigate(['userInfo']);
-      }).catch(e => {
-        console.log(e);
-        throw e;
       });
-    }
   }
 
   validateForm(email:string, pass: string){

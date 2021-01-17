@@ -1,5 +1,10 @@
 <div class="container"> 
     <div class="row justify-content-center">
+        <div class="text-info" *ngIf="userId == ''">
+            <span>Você não está logado. Entre no sistema para visualizar as informações do usuário.</span><br>
+            <a href="/login">Fazer o Login</a>
+        </div>
+
         <div class="text-info" *ngIf="userId != ''">
             <h5 class="alldata">
                 Informações do Usuário

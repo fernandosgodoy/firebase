@@ -30,7 +30,8 @@ export class RegisterComponent implements OnInit {
     this.clearErrorMessage();
     if (this.validateForm(this.email, this.password))
     {
-      this.authService.registerWithEmail(this.email, this.password).then((user) => {
+      this.authService.registerWithEmail(this.email, this.password)
+        .then((user) => {
         this.authService.authState = user;
         this.errorMessage = "Registrado com sucesso";
         // this.router.navigate(['userInfo']);
